@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api-service/api.service';
 
 
@@ -9,9 +10,12 @@ import { ApiService } from 'src/app/services/api-service/api.service';
 })
 export class PageOneComponent {
 
+  pokemonArray: Observable<any>;
+
   constructor(public apiServ: ApiService) {
-    // apiServ.getData().then(pokemon => console.log(pokemon))
-    apiServ.getData().subscribe(pokemon => console.log(pokemon))
+    //apiServ.getData().then(pokemon => console.log(pokemon))
+    //apiServ.getData().subscribe(pokemon => console.log(pokemon))
+    this.pokemonArray = apiServ.getData();
   }
 
 }

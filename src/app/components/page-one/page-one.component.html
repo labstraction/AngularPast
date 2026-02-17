@@ -1,1 +1,3 @@
-<p>page-one works!</p>
+<div *ngFor="let pokemon of pokemonArray | async">
+    <span>{{pokemon.name}}</span>
+</div>
