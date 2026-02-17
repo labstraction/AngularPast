@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,15 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  constructor() { }
+  readonly URL = "https://pokeapi.co/api/v2/pokemon"
+
+  constructor(private http: HttpClient) {}
+  
+  getData(){
+    // return fetch(this.URL)
+    // .then(resp => resp.json())
+    // .then(result => result);
+
+    return this.http.get(this.URL)
+  }
 }
